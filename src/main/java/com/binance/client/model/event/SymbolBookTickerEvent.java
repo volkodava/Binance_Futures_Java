@@ -1,9 +1,8 @@
 package com.binance.client.model.event;
 
 import com.binance.client.constant.BinanceApiConstants;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import java.math.BigDecimal;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class SymbolBookTickerEvent {
 
@@ -18,6 +17,8 @@ public class SymbolBookTickerEvent {
     private BigDecimal bestAskPrice;
 
     private BigDecimal bestAskQty;
+
+    private long createdAt;
 
     public Long getOrderBookUpdateId() {
         return orderBookUpdateId;
@@ -67,11 +68,20 @@ public class SymbolBookTickerEvent {
         this.bestAskQty = bestAskQty;
     }
 
+    public long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(long createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE)
-                .append("orderBookUpdateId", orderBookUpdateId).append("symbol", symbol)
-                .append("bestBidPrice", bestBidPrice).append("bestBidQty", bestBidQty)
-                .append("bestAskPrice", bestAskPrice).append("bestAskQty", bestAskQty).toString();
+            .append("orderBookUpdateId", orderBookUpdateId).append("symbol", symbol)
+            .append("bestBidPrice", bestBidPrice).append("bestBidQty", bestBidQty)
+            .append("bestAskPrice", bestAskPrice).append("bestAskQty", bestAskQty)
+            .append("createdAt", createdAt).toString();
     }
 }

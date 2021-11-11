@@ -22,6 +22,8 @@ public class TradeEvent {
 
     private Boolean buyerMaker;
 
+    private long createdAt;
+
     public String getEventType() {
         return eventType;
     }
@@ -86,10 +88,19 @@ public class TradeEvent {
         this.buyerMaker = buyerMaker;
     }
 
+    public long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(long createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE).append("eventType", eventType)
             .append("eventTime", eventTime).append("symbol", symbol).append("id", id).append("price", price)
-            .append("qty", qty).append("time", time).append("buyerMaker", buyerMaker).toString();
+            .append("qty", qty).append("time", time).append("buyerMaker", buyerMaker)
+            .append("createdAt", createdAt).toString();
     }
 }

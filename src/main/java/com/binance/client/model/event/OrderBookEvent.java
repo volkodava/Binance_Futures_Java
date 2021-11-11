@@ -25,6 +25,8 @@ public class OrderBookEvent {
 
     private List<OrderBookEntry> asks;
 
+    private long createdAt;
+
     public String getEventType() {
         return eventType;
     }
@@ -97,12 +99,21 @@ public class OrderBookEvent {
         this.asks = asks;
     }
 
+    public long getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(long createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE).append("eventType", eventType)
             .append("eventTime", eventTime).append("transactionTime", transactionTime).append("symbol", symbol)
             .append("firstUpdateId", firstUpdateId).append("lastUpdateId", lastUpdateId)
-            .append("lastUpdateIdInLastStream", lastUpdateIdInLastStream).append("bids", bids).append("asks", asks)
+            .append("lastUpdateIdInLastStream", lastUpdateIdInLastStream).append("bids", bids)
+            .append("asks", asks).append("createdAt", createdAt)
             .toString();
     }
 }

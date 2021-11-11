@@ -50,6 +50,7 @@ class WebsocketRequestImpl {
             result.setQty(jsonWrapper.getBigDecimal("q"));
             result.setTime(jsonWrapper.getLong("T"));
             result.setBuyerMaker(jsonWrapper.getBoolean("m"));
+            result.setCreatedAt(System.currentTimeMillis());
             return result;
         };
         return request;
@@ -293,6 +294,7 @@ class WebsocketRequestImpl {
             result.setBestBidQty(jsonWrapper.getBigDecimal("B"));
             result.setBestAskPrice(jsonWrapper.getBigDecimal("a"));
             result.setBestAskQty(jsonWrapper.getBigDecimal("A"));
+            result.setCreatedAt(System.currentTimeMillis());
             return result;
         };
         return request;
@@ -315,6 +317,7 @@ class WebsocketRequestImpl {
             result.setBestBidQty(jsonWrapper.getBigDecimal("B"));
             result.setBestAskPrice(jsonWrapper.getBigDecimal("a"));
             result.setBestAskQty(jsonWrapper.getBigDecimal("A"));
+            result.setCreatedAt(System.currentTimeMillis());
             return result;
         };
         return request;
