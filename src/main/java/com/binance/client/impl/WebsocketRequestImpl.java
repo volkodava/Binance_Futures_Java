@@ -38,7 +38,7 @@ class WebsocketRequestImpl {
             .shouldNotNull(subscriptionListener, "listener");
         WebsocketRequest<TradeEvent> request = new WebsocketRequest<>(subscriptionListener, errorHandler);
         request.name = "***Trade for " + symbol + "***";
-        request.connectionHandler = (connection) -> connection.send(Channels.aggregateTradeChannel(symbol));
+        request.connectionHandler = (connection) -> connection.send(Channels.tradeChannel(symbol));
 
         request.jsonParser = (jsonWrapper) -> {
             TradeEvent result = new TradeEvent();
