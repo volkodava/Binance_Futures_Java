@@ -1,11 +1,9 @@
 package com.binance.client.model.event;
 
 import com.binance.client.constant.BinanceApiConstants;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
-import java.util.List;
-
 import com.binance.client.model.market.OrderBookEntry;
+import java.util.List;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class OrderBookEvent {
 
@@ -21,7 +19,7 @@ public class OrderBookEvent {
 
     private Long lastUpdateId;
 
-    private Long lastUpdateIdInlastStream;
+    private Long lastUpdateIdInLastStream;
 
     private List<OrderBookEntry> bids;
 
@@ -75,12 +73,12 @@ public class OrderBookEvent {
         this.lastUpdateId = lastUpdateId;
     }
 
-    public Long getLastUpdateIdInlastStream() {
-        return lastUpdateIdInlastStream;
+    public Long getLastUpdateIdInLastStream() {
+        return lastUpdateIdInLastStream;
     }
 
-    public void setLastUpdateIdInlastStream(Long lastUpdateIdInlastStream) {
-        this.lastUpdateIdInlastStream = lastUpdateIdInlastStream;
+    public void setLastUpdateIdInLastStream(Long lastUpdateIdInLastStream) {
+        this.lastUpdateIdInLastStream = lastUpdateIdInLastStream;
     }
 
     public List<OrderBookEntry> getBids() {
@@ -102,9 +100,9 @@ public class OrderBookEvent {
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE).append("eventType", eventType)
-                .append("eventTime", eventTime).append("transactionTime", transactionTime).append("symbol", symbol)
-                .append("firstUpdateId", firstUpdateId).append("lastUpdateId", lastUpdateId)
-                .append("lastUpdateIdInlastStream", lastUpdateIdInlastStream).append("bids", bids).append("asks", asks)
-                .toString();
+            .append("eventTime", eventTime).append("transactionTime", transactionTime).append("symbol", symbol)
+            .append("firstUpdateId", firstUpdateId).append("lastUpdateId", lastUpdateId)
+            .append("lastUpdateIdInLastStream", lastUpdateIdInLastStream).append("bids", bids).append("asks", asks)
+            .toString();
     }
 }

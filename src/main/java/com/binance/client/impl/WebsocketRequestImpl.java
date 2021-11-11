@@ -48,10 +48,8 @@ class WebsocketRequestImpl {
             result.setId(jsonWrapper.getLong("t"));
             result.setPrice(jsonWrapper.getBigDecimal("p"));
             result.setQty(jsonWrapper.getBigDecimal("q"));
-            result.setBuyerId(jsonWrapper.getLong("b"));
-            result.setSellerId(jsonWrapper.getLong("a"));
             result.setTime(jsonWrapper.getLong("T"));
-            result.setIsBuyerMaker(jsonWrapper.getBoolean("m"));
+            result.setBuyerMaker(jsonWrapper.getBoolean("m"));
             return result;
         };
         return request;
@@ -402,7 +400,7 @@ class WebsocketRequestImpl {
             result.setSymbol(jsonWrapper.getString("s"));
             result.setFirstUpdateId(jsonWrapper.getLong("U"));
             result.setLastUpdateId(jsonWrapper.getLong("u"));
-            result.setLastUpdateIdInlastStream(jsonWrapper.getLong("pu"));
+            result.setLastUpdateIdInLastStream(jsonWrapper.getLong("pu"));
 
             List<OrderBookEntry> elementList = new LinkedList<>();
             JsonWrapperArray dataArray = jsonWrapper.getJsonArray("b");
@@ -447,7 +445,7 @@ class WebsocketRequestImpl {
             result.setSymbol(jsonWrapper.getString("s"));
             result.setFirstUpdateId(jsonWrapper.getLong("U"));
             result.setLastUpdateId(jsonWrapper.getLong("u"));
-            result.setLastUpdateIdInlastStream(jsonWrapper.getLong("pu"));
+            result.setLastUpdateIdInLastStream(jsonWrapper.getLong("pu"));
 
             List<OrderBookEntry> elementList = new LinkedList<>();
             JsonWrapperArray dataArray = jsonWrapper.getJsonArray("b");

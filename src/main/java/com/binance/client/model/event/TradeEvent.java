@@ -18,13 +18,9 @@ public class TradeEvent {
 
     private BigDecimal qty;
 
-    private Long buyerId;
-
-    private Long sellerId;
-
     private Long time;
 
-    private Boolean isBuyerMaker;
+    private Boolean buyerMaker;
 
     public String getEventType() {
         return eventType;
@@ -74,22 +70,6 @@ public class TradeEvent {
         this.qty = qty;
     }
 
-    public Long getBuyerId() {
-        return buyerId;
-    }
-
-    public void setBuyerId(Long buyerId) {
-        this.buyerId = buyerId;
-    }
-
-    public Long getSellerId() {
-        return sellerId;
-    }
-
-    public void setSellerId(Long sellerId) {
-        this.sellerId = sellerId;
-    }
-
     public Long getTime() {
         return time;
     }
@@ -98,19 +78,18 @@ public class TradeEvent {
         this.time = time;
     }
 
-    public Boolean getIsBuyerMaker() {
-        return isBuyerMaker;
+    public Boolean getBuyerMaker() {
+        return buyerMaker;
     }
 
-    public void setIsBuyerMaker(Boolean isBuyerMaker) {
-        this.isBuyerMaker = isBuyerMaker;
+    public void setBuyerMaker(Boolean buyerMaker) {
+        this.buyerMaker = buyerMaker;
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE).append("eventType", eventType)
             .append("eventTime", eventTime).append("symbol", symbol).append("id", id).append("price", price)
-            .append("qty", qty).append("buyerId", buyerId).append("sellerId", sellerId).append("time", time)
-            .append("isBuyerMaker", isBuyerMaker).toString();
+            .append("qty", qty).append("time", time).append("buyerMaker", buyerMaker).toString();
     }
 }
